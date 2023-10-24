@@ -24,11 +24,9 @@ function App() {
     setCategory(e.target.value)
   }
 
-  // const productsData = data 
-// console.log(productsData,"all")
 
 const filterItems = data.filter((data)=>data.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1)
-// console.log(filterItems,"filter")
+
 
 const FetchData = (products, selected , query) =>{
   let myData = products
@@ -42,13 +40,12 @@ const FetchData = (products, selected , query) =>{
          title === selected || 
          company === selected ||
         newPrice === selected 
-    )
-   
-  
+    )  
   }
   
    return myData.map(({category,title,company,color,newPrice,prevPrice,reviews,img,star})=>
-       <Card    
+   <div className=''> 
+   <Card    
        category={category}
       title={title}
       company={company}
@@ -59,23 +56,25 @@ const FetchData = (products, selected , query) =>{
       img={img}
       start={star}
       />
+      </div>
+      
     )
 }
 
-const result=FetchData(data,query,category)
+const result=FetchData(data,category,query)
 
 
 
   return (
     <div className="App flex-col flex p-10 sm:flex-row">
     <div  className='w-[20%]'>
-      i am tabinda nooor 
+      {/* i am tabinda nooor  */}
      <Slider handleChange={handleChange} />
     </div>
-    {/* <div className='w-[80%]'>
+    <div className='w-[80%]'>
         <Nav handleInputChange={handleInputChange} query={query} />
       <Products handleClick={handleClick} result={result} />
-    </div> */}
+    </div>
     </div>
   );
 }

@@ -3,9 +3,11 @@ import Input from './Input'
 
 const ColorCategory = ({handleChange}) => {
   return (
-    <div>
+    <div className='mt-10'>
+
       <label htmlFor="">
-        <input type="radio" onChange={handleChange} name="" id=""
+
+        <input type="radio"  name="test1"   className='bg-[#833ab4] ' onChange={handleChange}  id=""
          />
         <span ></span>All
       </label>

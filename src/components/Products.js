@@ -1,19 +1,20 @@
 import React from 'react'
 import data from './Data/Products'
+import Buttons from './Buttons'
 
 const Products = ({handleClick,result,category}) => {
-        console.log(result)
+        // console.log(result)
   return (
     <div className=' ' >
     <div className='flex justify-between'>
-    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>All products</button>
-    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Nike</button>
-    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Adidas</button>
-    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Puma</button>
-    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Vans</button> 
+    <Buttons handleClick={handleClick} value=""  title="all" />
+    <Buttons handleClick={handleClick} value="Nike" title="Nike" />
+    <Buttons handleClick={handleClick} value="Adidas" title="Adidas"/>
+    <Buttons handleClick={handleClick} value="Puma" title="Puma"/>
+    <Buttons handleClick={handleClick} value="Vans" title="Vans" /> 
     </div>
     <br />
-            <div className=' grid grid-cols-4 gap-6'>
+            {/* <div className=' grid grid-cols-4 gap-6'>
                 {data.map((product,index)=>{
                     return (
                         <div key={index}>
@@ -36,7 +37,11 @@ const Products = ({handleClick,result,category}) => {
                         </div>
                     )
                 })}
+            </div> */}
+            <div className='grid-cols-4' >
+                  {result} 
             </div>
+         
     </div>
   )
 }

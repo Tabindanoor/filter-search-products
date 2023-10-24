@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = ({category,company,title,color,newPrice,prevPrice,reviews,img,star}) => {
   return (
-    <div>
+    <div className='flex '>
       <div key={Math.random()}>
 
 <div className="max-w-sm h-[320px] p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">

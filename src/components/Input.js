@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Input = ({handleChange,color, title, value, name}) => {
-  console.log(handleChange, color, title, value, name)
+  // console.log(handleChange, color, title, value, name)
 
   return (
     <div>

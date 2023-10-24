@@ -5,7 +5,7 @@ const PriceCategory = ({handleChange}) => {
   return (
     <div>
         <label htmlFor="">
-            <input type="radio" onChange={handleChange} name="" id="" />
+            <input type="radio" onChange={handleChange} name="test2" id="" />
             <span></span>All
         </label>
 

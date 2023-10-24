@@ -4,10 +4,10 @@ import Input from './Input'
 
 const ShoeCategory = ({handleChange}) => {
   return (
-    <div>
+    <div className='mb-10'>
 
     <label htmlFor="">
-        <input type="radio" name="" title='' onChange={handleChange} value="" id="" /> 
+        <input type="radio" name="test" title='' onChange={handleChange} value="" id="" /> 
         <span></span>  All 
     </label>  
 
