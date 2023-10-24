@@ -233,7 +233,7 @@ const data = [
       reviews: "(123 reviews)",
       prevPrice: "$140,00",
       newPrice: "100",
-      company: "puma",
+      company: "Puma",
       color: "black",
       category: "heels",
     },

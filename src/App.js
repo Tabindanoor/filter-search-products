@@ -4,7 +4,10 @@ import Nav from './components/Nav';
 import Products from './components/Products';
 import { useState } from 'react';
 import data from './components/Data/Products';
+import Input from './components/Input';
+import Card from './components/Card';
 function App() {
+
 
   const [query, setQuery] = useState("")
   const [category, setCategory] = useState("")
@@ -20,22 +23,59 @@ function App() {
   const handleClick=(e)=>{
     setCategory(e.target.value)
   }
-  
 
-  const productsData = data 
-console.log(productsData)
+  // const productsData = data 
+// console.log(productsData,"all")
+
+const filterItems = data.filter((data)=>data.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1)
+// console.log(filterItems,"filter")
+
+const FetchData = (products, selected , query) =>{
+  let myData = products
+  if(query){
+    myData = filterItems
+  }
+  if(selected){
+    myData = myData.filter(({category, color, company,  title, newPrice})=>
+        category === selected ||
+         color === selected || 
+         title === selected || 
+         company === selected ||
+        newPrice === selected 
+    )
+   
+  
+  }
+  
+   return myData.map(({category,title,company,color,newPrice,prevPrice,reviews,img,star})=>
+       <Card    
+       category={category}
+      title={title}
+      company={company}
+      color={color}
+      newPrice={newPrice}
+      prevPrice={prevPrice}
+      reviews={reviews}
+      img={img}
+      start={star}
+      />
+    )
+}
+
+const result=FetchData(data,query,category)
+
+
 
   return (
-    <div className="App flex p-10">
+    <div className="App flex-col flex p-10 sm:flex-row">
     <div  className='w-[20%]'>
-     <Slider handleChange={handleChange} category={category} />
+      i am tabinda nooor 
+     <Slider handleChange={handleChange} />
     </div>
-    <div className='w-[80%]'>
+    {/* <div className='w-[80%]'>
         <Nav handleInputChange={handleInputChange} query={query} />
-      <Products handleClick={handleClick} />
-    </div>
-     
-      
+      <Products handleClick={handleClick} result={result} />
+    </div> */}
     </div>
   );
 }

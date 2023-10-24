@@ -1,16 +1,16 @@
 import React from 'react'
 import data from './Data/Products'
 
-const Products = ({handleClick}) => {
-    
+const Products = ({handleClick,result,category}) => {
+        console.log(result)
   return (
     <div className=' ' >
     <div className='flex justify-between'>
-    <button onClick={e=>{handleClick(e)}} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>All products</button>
-    <button onClick={e=>{handleClick(e)}} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Nike</button>
-    <button onClick={e=>{handleClick(e)}} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Adidas</button>
-    <button onClick={e=>{handleClick(e)}} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Puma</button>
-    <button onClick={e=>{handleClick(e)}} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Vans</button> 
+    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>All products</button>
+    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Nike</button>
+    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Adidas</button>
+    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Puma</button>
+    <button onClick={e=>{handleClick(e)}} value={category} className='rounded-2xl border border-blue-950 px-4 py-3 mx-3 w-full'>Vans</button> 
     </div>
     <br />
             <div className=' grid grid-cols-4 gap-6'>
